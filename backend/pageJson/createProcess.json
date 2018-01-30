@@ -1,0 +1,49 @@
+{
+    "title": "Create Process",
+    "name": "Process",
+    "jsonPage": "viewProcess",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["Process"],
+    "fields": [{
+            "name": "Name",
+            "type": "text",
+            "tableRef": "name",
+            "placeholder": "Enter Name",
+            "id": "name",
+            "validation": ["required", "", ""],
+            "url": ""
+        },
+        {
+            "name": "Data",
+            "type": "text",
+            "tableRef": "data",
+            "placeholder": "Enter Data",
+            "id": "data",
+            "validation": ["required", "", ""],
+            "url": ""
+        }
+    ],
+    "action": [{
+        "name": "submit",
+        "action": "submitProcess",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewProcess"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewProcess"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Process/save"
+    }
+}

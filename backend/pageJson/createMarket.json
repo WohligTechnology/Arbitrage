@@ -1,0 +1,66 @@
+{
+    "title": "Create Market",
+    "name": "Market",
+    "jsonPage": "viewMarket",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["Market"],
+    "fields": [{
+            "name": "Name",
+            "type": "text",
+            "tableRef": "name",
+            "placeholder": "Enter Name",
+            "id": "name",
+            "validation": ["required", "", ""],
+            "url": ""
+        }, {
+            "name": "Key",
+            "type": "text",
+            "tableRef": "key",
+            "placeholder": "Enter Key",
+            "id": "email",
+            "validation": ["", "", ""],
+            "url": ""
+        },
+        {
+            "name": "Secret",
+            "type": "text",
+            "tableRef": "secret",
+            "placeholder": "Enter Secret",
+            "id": "secret",
+            "validation": ["", "", ""],
+            "url": ""
+        },
+        {
+            "name": "Transaction Commission",
+            "type": "number",
+            "tableRef": "transactionCommission",
+            "placeholder": "Enter Transaction Commission",
+            "id": "secret",
+            "validation": ["", "", ""],
+            "url": ""
+        }
+    ],
+    "action": [{
+        "name": "submit",
+        "action": "submitMarket",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewMarket"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewMarket"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Market/save"
+    }
+}

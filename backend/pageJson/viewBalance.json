@@ -1,0 +1,45 @@
+{
+    "title": "Balance",
+    "description": "List of Balance",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Market",
+        "isSort": "",
+        "tableRef": "market"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editBalance",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete Balance",
+        "content": "Are you sure you want to delete Balance?",
+        "api": "Balance/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createBalance"
+    }],
+    "apiCall": {
+        "url": "Balance/search",
+        "params": "_id"
+    }
+}

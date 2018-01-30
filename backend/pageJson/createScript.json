@@ -1,0 +1,79 @@
+{
+    "title": "Create Script",
+    "name": "Script",
+    "jsonPage": "viewScript",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["Script"],
+    "fields": [{
+            "name": "Name",
+            "type": "text",
+            "tableRef": "name",
+            "placeholder": "Enter Name",
+            "id": "name",
+            "validation": ["required", "", ""],
+            "url": ""
+        },
+        {
+            "name": "Currency1",
+            "type": "text",
+            "tableRef": "currency1",
+            "placeholder": "Enter Currency1",
+            "id": "currency1",
+            "validation": ["", "", ""],
+            "url": ""
+        }, {
+            "name": "Currency2",
+            "type": "text",
+            "tableRef": "currency2",
+            "placeholder": "Enter Currency2",
+            "id": "currency2",
+            "validation": ["", "", ""],
+            "url": ""
+        }, {
+            "name": "Add Market Name",
+            "type": "box",
+            "tableRef": "marketName",
+            "placeholder": "Add Market Name",
+            "id": "marketName",
+            "onView": true,
+            "validation": ["", "trim", ""],
+            "url": "",
+            "fields": [{
+                "name": "Market",
+                "type": "tags",
+                "tableRef": "market",
+                "onView": true,
+                "placeholder": "Select Market",
+                "id": "market",
+                "dropDownField": "market",
+                "dropDownType": "single",
+                "searchApi": "searchCall",
+                "url": "Market/search",
+                "validation": ["", "trim", ""]
+            }]
+        }
+    ],
+    "action": [{
+        "name": "submit",
+        "action": "submitScript",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewScript"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewScript"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Script/save"
+    }
+}

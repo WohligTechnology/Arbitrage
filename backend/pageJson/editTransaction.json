@@ -1,0 +1,125 @@
+{
+    "title": "Edit Transaction",
+    "name": "Transaction",
+    "jsonPage": "viewTransaction",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+            "name": "Market",
+            "type": "tags",
+            "tableRef": "market",
+            "onView": true,
+            "placeholder": "Select Market",
+            "id": "market",
+            "dropDownField": "name",
+            "dropDownType": "single",
+            "searchApi": "searchCall",
+            "url": "Market/search",
+            "validation": ["", "trim", ""]
+        },
+        {
+            "name": "Script",
+            "type": "tags",
+            "tableRef": "script",
+            "onView": true,
+            "placeholder": "Select script",
+            "id": "script",
+            "dropDownField": "name",
+            "dropDownType": "single",
+            "searchApi": "searchCall",
+            "url": "Script/search",
+            "validation": ["", "trim", ""]
+        }, {
+            "name": "Transaction Id",
+            "type": "text",
+            "tableRef": "transactionId",
+            "placeholder": "Enter Transaction Id",
+            "id": "transactionId",
+            "validation": ["", "", ""],
+            "url": ""
+        },
+        {
+            "name": "Quantity",
+            "type": "number",
+            "tableRef": "quantity",
+            "placeholder": "Enter Quantity",
+            "id": "quantity",
+            "validation": ["", "", ""],
+            "url": ""
+        },
+        {
+            "name": "Rate",
+            "type": "number",
+            "tableRef": "rate",
+            "placeholder": "Enter Rate",
+            "id": "rate",
+            "validation": ["", "", ""],
+            "url": ""
+        },
+        {
+            "name": "status",
+            "type": "text",
+            "tableRef": "status",
+            "placeholder": "Enter Status",
+            "id": "status",
+            "validation": ["", "", ""],
+            "url": ""
+        },
+        {
+            "name": "Completion Time",
+            "type": "date",
+            "tableRef": "completionTime",
+            "placeholder": "Enter Completion Time",
+            "id": "completionTime",
+            "validation": ["", "", ""],
+            "url": ""
+        },
+        {
+            "name": "Quantity Completed",
+            "type": "number",
+            "tableRef": "quantityCompleted",
+            "placeholder": "Enter Quantity Completed",
+            "id": "quantityCompleted",
+            "validation": ["", "", ""],
+            "url": ""
+        },
+        {
+            "name": "Market Sell",
+            "type": "text",
+            "tableRef": "marketSell",
+            "placeholder": "Enter Market Sell",
+            "id": "marketSell",
+            "validation": ["", "", ""],
+            "url": ""
+        }
+    ],
+    "action": [{
+        "name": "submit",
+        "action": "submitTransaction",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewTransaction"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewTransaction"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Transaction/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Transaction/getOne",
+        "params": "_id"
+    }
+
+}

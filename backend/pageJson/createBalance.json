@@ -1,0 +1,74 @@
+{
+    "title": "Create Balance",
+    "name": "Balance",
+    "jsonPage": "viewBalance",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["Balance"],
+    "fields": [{
+        "name": "Market",
+        "type": "tags",
+        "tableRef": "market",
+        "onView": true,
+        "placeholder": "Select Market",
+        "id": "market",
+        "dropDownField": "name",
+        "dropDownType": "single",
+        "searchApi": "searchCall",
+        "url": "Market/search",
+        "validation": ["", "trim", ""]
+    }, {
+        "name": "Data",
+        "type": "box",
+        "tableRef": "data",
+        "placeholder": "Data",
+        "id": "data",
+        "onView": true,
+        "validation": ["", "trim", ""],
+        "url": "",
+        "fields": [{
+            "name": "Currency",
+            "type": "tags",
+            "tableRef": "currency",
+            "placeholder": "Enter currency",
+            "id": "currency",
+            "dropDownField": "name",
+            "dropDownType": "single",
+            "onView": true,
+            "validation": ["", "trim", ""],
+            "searchApi": "searchCall",
+            "url": "Currency/search"
+        }, {
+            "name": "Value",
+            "type": "number",
+            "tableRef": "value",
+            "placeholder": "Enter value",
+            "id": "value",
+            "onView": true,
+            "validation": ["", "trim", "unique"],
+            "url": ""
+        }]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitBalance",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewBalance"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewBalance"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Balance/save"
+    }
+}

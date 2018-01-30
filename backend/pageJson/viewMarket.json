@@ -1,0 +1,57 @@
+{
+    "title": "Market",
+    "description": "List of Markets",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Key",
+        "isSort": "",
+        "tableRef": "key"
+    }, {
+        "name": "secret",
+        "isSort": "",
+        "tableRef": "secret"
+    }, {
+        "name": "Transaction Commission",
+        "isSort": "",
+        "tableRef": "transactionCommission"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editMarket",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete Market",
+        "content": "Are you sure you want to delete Market?",
+        "api": "Market/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createMarket"
+    }],
+    "apiCall": {
+        "url": "Market/search",
+        "params": "_id"
+    }
+}

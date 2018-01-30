@@ -1,0 +1,71 @@
+{
+    "title": "Create Currency",
+    "name": "Currency",
+    "jsonPage": "viewCurrency",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["Currency"],
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter Name",
+        "id": "name",
+        "validation": ["required", "", ""],
+        "url": ""
+    }, {
+        "name": "Add Market Name",
+        "type": "box",
+        "tableRef": "marketName",
+        "placeholder": "Add Market Name",
+        "id": "marketName",
+        "onView": true,
+        "validation": ["", "trim", ""],
+        "url": "",
+        "fields": [{
+                "name": "Market",
+                "type": "tags",
+                "tableRef": "market",
+                "onView": true,
+                "placeholder": "Select Market",
+                "id": "market",
+                "dropDownField": "market",
+                "dropDownType": "single",
+                "searchApi": "searchCall",
+                "url": "Market/search",
+                "validation": ["", "trim", ""]
+            },
+            {
+                "name": "name",
+                "type": "text",
+                "tableRef": "name",
+                "onView": true,
+                "placeholder": "Enter Name",
+                "id": "name",
+                "validation": ["", "trim", ""]
+            }
+        ]
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitCurrency",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewCurrency"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewCurrency"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Currency/save"
+    }
+}

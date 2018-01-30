@@ -1,0 +1,96 @@
+{
+    "title": "Create ScriptRatio",
+    "name": "ScriptRatio",
+    "jsonPage": "viewScriptRatio",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["ScriptRatio"],
+    "fields": [{
+            "name": "Name",
+            "type": "text",
+            "tableRef": "name",
+            "placeholder": "Enter Name",
+            "id": "name",
+            "validation": ["required", "", ""],
+            "url": ""
+        }, {
+            "name": "Market1",
+            "type": "tags",
+            "tableRef": "market1",
+            "onView": true,
+            "placeholder": "Select Market1",
+            "id": "market1",
+            "dropDownField": "name",
+            "dropDownType": "single",
+            "searchApi": "searchCall",
+            "url": "Market/search",
+            "validation": ["", "trim", ""]
+        },
+        {
+            "name": "Market2",
+            "type": "tags",
+            "tableRef": "market2",
+            "onView": true,
+            "placeholder": "Select Market2",
+            "id": "market2",
+            "dropDownField": "name",
+            "dropDownType": "single",
+            "searchApi": "searchCall",
+            "url": "Market/search",
+            "validation": ["", "trim", ""]
+        },
+        {
+            "name": "Script",
+            "type": "tags",
+            "tableRef": "script",
+            "onView": true,
+            "placeholder": "Select script",
+            "id": "script",
+            "dropDownField": "name",
+            "dropDownType": "single",
+            "searchApi": "searchCall",
+            "url": "Script/search",
+            "validation": ["", "trim", ""]
+        },
+        {
+            "name": "BuySell Ratio",
+            "type": "number",
+            "tableRef": "buySellRatio",
+            "placeholder": "Enter Buy Sell Ratio",
+            "id": "buySellRatio",
+            "validation": ["", "", ""],
+            "url": ""
+        },
+        {
+            "name": "SellBuy Ratio",
+            "type": "number",
+            "tableRef": "sellBuyRatio",
+            "placeholder": "Enter sellBuy Ratio",
+            "id": "sellBuyRatio",
+            "validation": ["", "", ""],
+            "url": ""
+        }
+    ],
+    "action": [{
+        "name": "submit",
+        "action": "submitScriptRatio",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewScriptRatio"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewScriptRatio"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "ScriptRatio/save"
+    }
+}

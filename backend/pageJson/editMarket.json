@@ -1,0 +1,72 @@
+{
+    "title": "Edit Market",
+    "name": "Market",
+    "jsonPage": "viewMarket",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+            "name": "Name",
+            "type": "text",
+            "tableRef": "name",
+            "placeholder": "Enter Name",
+            "id": "name",
+            "validation": ["required", "", ""],
+            "url": ""
+        }, {
+            "name": "key",
+            "type": "text",
+            "tableRef": "key",
+            "placeholder": "Enter Key",
+            "id": "email",
+            "validation": ["", "", ""],
+            "url": ""
+        },
+        {
+            "name": "secret",
+            "type": "text",
+            "tableRef": "secret",
+            "placeholder": "Enter Secret",
+            "id": "secret",
+            "validation": ["", "", ""],
+            "url": ""
+        },
+        {
+            "name": "Transaction Commission",
+            "type": "number",
+            "tableRef": "transactionCommission",
+            "placeholder": "Enter Transaction Commission",
+            "id": "transactionCommission",
+            "validation": ["", "", ""],
+            "url": ""
+        }
+    ],
+    "action": [{
+        "name": "submit",
+        "action": "submitMarket",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewMarket"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewMarket"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Market/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Market/getOne",
+        "params": "_id"
+    }
+
+}
