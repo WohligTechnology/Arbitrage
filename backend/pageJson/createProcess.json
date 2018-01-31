@@ -6,22 +6,106 @@
     "pageType": "create",
     "urlFields": ["Process"],
     "fields": [{
-            "name": "Name",
+            "name": "Script Buy",
+            "type": "tags",
+            "tableRef": "scriptBuy",
+            "onView": true,
+            "placeholder": "Select Script Buy",
+            "id": "scriptBuy",
+            "dropDownField": "name",
+            "dropDownType": "single",
+            "searchApi": "searchCall",
+            "url": "Script/search",
+            "validation": ["", "trim", ""]
+        }, {
+            "name": "Script Sell",
+            "type": "tags",
+            "tableRef": "scriptSell",
+            "onView": true,
+            "placeholder": "Select Script Sell",
+            "id": "scriptSell",
+            "dropDownField": "name",
+            "dropDownType": "single",
+            "searchApi": "searchCall",
+            "url": "Script/search",
+            "validation": ["", "trim", ""]
+        }, {
+            "name": "status",
             "type": "text",
+            "tableRef": "status",
+            "placeholder": "Enter status",
+            "id": "status",
+            "validation": ["", "", ""],
+            "url": ""
+        }, {
+            "name": "Transaction1",
+            "type": "tags",
+            "tableRef": "transaction1",
+            "onView": true,
+            "placeholder": "Select transaction1",
+            "id": "transaction1",
+            "dropDownField": "transactionId",
+            "dropDownType": "single",
+            "searchApi": "searchCall",
+            "url": "Transaction/search",
+            "validation": ["", "trim", ""]
+        }, {
+            "name": "Transaction2",
+            "type": "tags",
+            "tableRef": "transaction2",
+            "onView": true,
+            "placeholder": "Select Transaction2",
+            "id": "transaction2",
+            "dropDownField": "transactionId",
+            "dropDownType": "single",
+            "searchApi": "searchCall",
+            "url": "Transaction/search",
+            "validation": ["", "trim", ""]
+        }, {
+            "name": "Completion Time",
+            "type": "date",
             "tableRef": "name",
-            "placeholder": "Enter Name",
-            "id": "name",
-            "validation": ["required", "", ""],
+            "placeholder": "Enter completionTime",
+            "id": "completionTime",
+            "validation": ["", "", ""],
             "url": ""
         },
         {
-            "name": "Data",
-            "type": "text",
-            "tableRef": "data",
-            "placeholder": "Enter Data",
-            "id": "data",
-            "validation": ["required", "", ""],
+            "name": "quantity",
+            "type": "number",
+            "tableRef": "quantity",
+            "placeholder": "Enter quantity",
+            "id": "quantity",
+            "validation": ["", "", ""],
             "url": ""
+        },
+        {
+            "name": "Ratio",
+            "type": "number",
+            "tableRef": "ratio",
+            "placeholder": "Enter Ratio",
+            "id": "ratio",
+            "validation": ["", "", ""],
+            "url": ""
+        },
+        {
+            "name": "profit",
+            "type": "number",
+            "tableRef": "profit",
+            "placeholder": "Enter profit",
+            "id": "profit",
+            "validation": ["", "", ""],
+            "url": ""
+        },
+        {
+            "name": "HasNotified",
+            "type": "checkbox",
+            "tableRef": "hasNotified",
+            "id": "hasNotified",
+            "url": "",
+            "validation": [
+                ""
+            ]
         }
     ],
     "action": [{

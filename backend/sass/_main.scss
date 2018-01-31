@@ -11,7 +11,7 @@
  $brand-danger: $red;
  $brand-success: $green;
  $body-color-font: #505050;
- @import "../../bower_components/bootstrap/scss/bootstrap";
+ @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
  @import "template/icons";
  @import "template/main";
  @import "template/responsive";
@@ -56,9 +56,7 @@
      &:focus {
          outline: none !important;
      }
- }
-
- //bootstrap forms
+ } //bootstrap forms
  .btn,
  .form-control,
  .input-group-lg>.form-control,
@@ -728,9 +726,7 @@
 
  .side-header {
      overflow-y: auto;
- }
-
- // .form-control,
+ } // .form-control,
  // .table td {
  //     text-transform: capitalize;
  // }

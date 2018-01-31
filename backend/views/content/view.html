@@ -43,6 +43,12 @@
                                         <td>{{($index + 1)+((currentPage-1)*maxRow)}}</td>
                                         <td ng-repeat="field in json.json.fields">
                                             <view-field type="field" value="item"></view-field>
+                                            <span ng-if="field.name=='ScriptBuy'">{{item.scriptBuy.name}}</span>
+                                            <span ng-if="field.name=='ScriptSell'">{{item.scriptSell.name}}</span>
+                                            <span ng-if="field.name=='Transaction1'">{{item.transaction1.transactionId}}</span>
+                                            <span ng-if="field.name=='Transaction2'">{{item.transaction2.transactionId}}</span>
+                                            <span ng-if="field.name=='Market'">{{item.market.name}}</span>
+                                            <span ng-if="field.name=='Script'">{{item.script.name}}</span>
                                         </td>
                                         <td ng-repeat="but in json.json.action">
                                             <a class="btn" ng-class="but.buttonClass" ng-click="json.eventAction(but,item) ">

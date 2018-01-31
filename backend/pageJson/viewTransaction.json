@@ -7,12 +7,14 @@
     "fields": [{
             "name": "Market",
             "isSort": "",
-            "tableRef": "market"
+            "tableRef": "market",
+            "field": "name"
         },
         {
             "name": "Script",
             "isSort": "",
-            "tableRef": "script"
+            "tableRef": "script",
+            "field": "name"
         },
         {
             "name": "Transaction Id",

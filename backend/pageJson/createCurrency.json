@@ -29,7 +29,7 @@
                 "onView": true,
                 "placeholder": "Select Market",
                 "id": "market",
-                "dropDownField": "market",
+                "dropDownField": "name",
                 "dropDownType": "single",
                 "searchApi": "searchCall",
                 "url": "Market/search",

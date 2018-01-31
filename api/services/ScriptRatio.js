@@ -29,7 +29,7 @@ schema.plugin(deepPopulate, {
         },
         'script': {
             select: ""
-        },
+        }
     }
 });
 schema.plugin(uniqueValidator);
